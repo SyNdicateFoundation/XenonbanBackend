@@ -16,7 +16,7 @@ public class Main extends JavaPlugin {
         getServer().getMessenger().registerIncomingPluginChannel(this, "xenonban:channel", new EventListener());
         getCommand("ban").setExecutor(new BanCommand());
         getCommand("kick").setExecutor(new KickCommand());
-        getCommand("mute").setExecutor(new MuteCommand());
+        getCommand("mute").setExecutor(new MuteCommand()); 
     }
 
     @Override
