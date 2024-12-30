@@ -67,9 +67,9 @@ jobs:
       - name: Check for XenonbanBackend-1.0-SNAPSHOT.jar
         id: check_jar
         run: |
-          if [ -f "bootstrap/target/XenonbanBackend-1.0-SNAPSHOT.jar" ]; then
+          if [ -f "target/XenonbanBackend-1.0-SNAPSHOT.jar" ]; then
             echo "XenonbanBackend-1.0-SNAPSHOT.jar found."
-            echo "JAR_FILE_PATH=bootstrap/target/XenonbanBackend-1.0-SNAPSHOT.jar" >> $GITHUB_ENV
+            echo "JAR_FILE_PATH=target/XenonbanBackend-1.0-SNAPSHOT.jar" >> $GITHUB_ENV
             echo "JAR_FILE_NAME=XenonbanBackend-1.0-SNAPSHOT.jar" >> $GITHUB_ENV
           else
             echo "XenonbanBackend-1.0-SNAPSHOT.jar not found!"
