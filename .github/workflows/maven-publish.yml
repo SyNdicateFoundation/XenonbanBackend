@@ -62,7 +62,7 @@ jobs:
         run: mvn -B package --file pom.xml -DskipTests --no-transfer-progress
 
       - name: List target directory
-        run: ls -al bootstrap/target
+        run: ls -al target
 
       - name: Check for XenonbanBackend-1.0-SNAPSHOT.jar
         id: check_jar
