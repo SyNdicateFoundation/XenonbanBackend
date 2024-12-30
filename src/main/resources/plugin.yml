@@ -1,0 +1,10 @@
+name: XenonbanBackend
+version: 0
+main: ir.realstresser.Main
+commands:
+  ban:
+    permission: xenonban.ban
+  kick:
+    permission: xenonban.kick
+  mute:
+    permission: xenonban.mute
