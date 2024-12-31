@@ -20,6 +20,7 @@ public class BanCommand implements CommandExecutor {
                     XenonBanBackend.instance,
                     "xenonban:channel",
                     String.format("ban %s %s %s", strings[0], strings[1], sb.toString().replace(strings[0] , "").replace(strings[1], "").substring(2)).getBytes());
+            System.out.println("plugin message sent!");
             return true;
         }
         return false;
