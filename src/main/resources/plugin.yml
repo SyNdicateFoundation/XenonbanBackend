@@ -1,6 +1,6 @@
 name: XenonbanBackend
 version: 0
-main: ir.realstresser.Main
+main: ir.realstresser.xenonbanbackend.XenonBanBackend
 commands:
   ban:
     permission: xenonban.ban

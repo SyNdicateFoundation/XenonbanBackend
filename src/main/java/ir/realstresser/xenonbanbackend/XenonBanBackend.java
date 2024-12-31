@@ -6,8 +6,8 @@ import ir.realstresser.xenonbanbackend.commands.MuteCommand;
 import ir.realstresser.xenonbanbackend.listeners.EventListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
-    public static Main instance;
+public class XenonBanBackend extends JavaPlugin {
+    public static XenonBanBackend instance;
     @Override
     public void onEnable() {
         instance = this;

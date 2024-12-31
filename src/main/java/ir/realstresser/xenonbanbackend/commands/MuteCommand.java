@@ -1,6 +1,6 @@
 package ir.realstresser.xenonbanbackend.commands;
 
-import ir.realstresser.xenonbanbackend.Main;
+import ir.realstresser.xenonbanbackend.XenonBanBackend;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,8 +15,8 @@ public class MuteCommand implements CommandExecutor {
 
             Arrays.stream(strings).forEach(word -> sb.append(word).append(" "));
 
-            Main.instance.getServer().getOnlinePlayers().iterator().next().sendPluginMessage(
-                    Main.instance,
+            XenonBanBackend.instance.getServer().getOnlinePlayers().iterator().next().sendPluginMessage(
+                    XenonBanBackend.instance,
                     "xenonban:channel", String.format("mute %s %s %s", strings[0], strings[1], sb.toString().replace(strings[0] , "").replace(strings[1], "").substring(2)).getBytes());
         }
         return false;
