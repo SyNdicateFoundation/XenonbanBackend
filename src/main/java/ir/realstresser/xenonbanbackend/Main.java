@@ -1,9 +1,9 @@
-package ir.realstresser;
+package ir.realstresser.xenonbanbackend;
 
-import ir.realstresser.commands.BanCommand;
-import ir.realstresser.commands.KickCommand;
-import ir.realstresser.commands.MuteCommand;
-import ir.realstresser.listeners.EventListener;
+import ir.realstresser.xenonbanbackend.commands.BanCommand;
+import ir.realstresser.xenonbanbackend.commands.KickCommand;
+import ir.realstresser.xenonbanbackend.commands.MuteCommand;
+import ir.realstresser.xenonbanbackend.listeners.EventListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {

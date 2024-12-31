@@ -1,10 +1,10 @@
-package ir.realstresser.commands;
+package ir.realstresser.xenonbanbackend.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-public class UnmuteCommand extends Command {
-    public UnmuteCommand(){
+public class UnbanCommand extends Command {
+    public UnbanCommand(){
         super("ban");
     }
     @Override
