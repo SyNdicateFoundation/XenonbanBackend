@@ -1,23 +1,33 @@
 package ir.realstresser.xenonbanbackend.commands;
 
 import ir.realstresser.xenonbanbackend.XenonBanBackend;
+import lombok.Cleanup;
+import lombok.SneakyThrows;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
 import java.util.Arrays;
 
 public class MuteCommand implements CommandExecutor {
     @Override
+    @SneakyThrows
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender.hasPermission("xenonban.mute")) {
             final StringBuilder sb = new StringBuilder();
 
             Arrays.stream(strings).forEach(word -> sb.append(word).append(" "));
 
-            XenonBanBackend.instance.getServer().getOnlinePlayers().iterator().next().sendPluginMessage(
-                    XenonBanBackend.instance,
-                    "xenonban:channel", String.format("mute %s %s %s", strings[0], strings[1], sb.toString().replace(strings[0] , "").replace(strings[1], "").substring(2)).getBytes());
+            String cmd = String.format("mute %s", sb);
+
+            @Cleanup final Socket socket = new Socket("127.0.0.1", 20019);
+
+            @Cleanup BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
+            bw.write(cmd);
         }
         return false;
     }
